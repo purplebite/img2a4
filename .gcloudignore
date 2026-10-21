@@ -1,0 +1,5 @@
+# Allow-list: upload ONLY what the function needs. Everything else (tests, scripts,
+# docs, .env, local output) stays on your machine, even for a manual deploy.
+*
+!main.py
+!requirements.txt
