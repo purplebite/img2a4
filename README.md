@@ -239,6 +239,30 @@ pip-compile --generate-hashes --strip-extras --output-file=requirements-dev.txt 
 
 Tests use generated images only. Please never commit real photos or documents.
 
+### Keep packages up to date (in your own copy)
+
+This repo gets its updates from the source repo, so Dependabot is off here. Running your own
+copy? Turn on monthly update PRs by adding `.github/dependabot.yml`:
+
+```yaml
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      python-packages:
+        patterns: ["*"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+```
+
+The tests run on every update PR; merge when green, then run `./scripts/deploy.sh`. A new
+version only goes live when the end-to-end check passes.
+
 ## License
 
 MIT. Use it, fork it, ship it.
