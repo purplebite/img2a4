@@ -2,5 +2,5 @@
 #   pip-compile --generate-hashes --strip-extras --output-file=requirements.txt requirements.in
 functions-framework==3.10.2
 img2pdf==0.6.3
-pillow==12.3.0
+pillow==13.0.0
 pillow-heif==1.8.1
